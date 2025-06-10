@@ -14,7 +14,7 @@ function App() {
     const [editoraSelecionada, setEditoraSelecionada] = useState(null);
 
     const loadBooks = async () => {
-        const res = await axios.get("http://localhost:3000/livros");
+        const res = await axios.get("https://livros-api-8pso.onrender.com/livros");
         setBooks(res.data);
     };
 

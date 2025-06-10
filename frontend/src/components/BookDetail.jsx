@@ -12,7 +12,7 @@ export default function BookDetail() {
   useEffect(() => {
     async function fetchBook() {
       try {
-        const res = await axios.get(`http://localhost:3000/livros/${id}`);
+        const res = await axios.get(`https://livros-api-8pso.onrender.com/livros/${id}`);
         setBook(res.data);
       } catch (error) {
         console.error("Erro ao buscar livro", error);
