@@ -23,13 +23,26 @@ export default function BookDetail() {
     fetchBook();
   }, [id]);
 
-  if (loading) return <p>Carregando...</p>;
-  if (!book) return <p>Livro não encontrado.</p>;
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-96 bg-[#ECECEC]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-[#EE7354] mb-4"></div>
+        <p className="text-[#143B52] font-medium">Carregando livro...</p>
+      </div>
+    );
+  }
+
+  if (!book) {
+    return (
+      <p className="text-[#143B52] font-medium">Livro não encontrado.</p>
+    );
+  };
 
   return (
     <div className="bg-[#ECECEC] p-6 w-full h-full rounded-br-md">
-        <Link to="/" className="flex mb-4">
-          <ArrowLeft className="w-6 h-6" strokeWidth={2.5} color="#143B52" />
+        <Link to="/" className="flex items-center gap-2 text-[#143B52] mb-4 font-medium">
+          <ArrowLeft className="w-6 h-6" strokeWidth={2.5} />
+          Voltar para os livros
         </Link>
 
         <div className="grid grid-cols-[auto_5fr_2fr] gap-6 mb-6 h-72">

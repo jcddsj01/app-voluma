@@ -5,7 +5,7 @@ export default function BookList({ books, categoria, autor, editora }) {
     const filteredBooks = applyFilters(books, { categoria, autor, editora });
 
     return (
-        <main className="bg-[#ECECEC] p-6 w-full min-h-screen rounded-br-md">
+        <main className="bg-[#ECECEC] p-6 w-full h-full rounded-br-md">
             <ul className="grid grid-cols-5 gap-4">
                 {filteredBooks.map(({ _id, titulo, autor, preco, tipoCapa, imagemCapa }) => (
                     <li key={_id} className="flex flex-col rounded-md items-center p-4 bg-white">
