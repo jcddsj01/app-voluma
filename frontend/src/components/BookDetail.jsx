@@ -45,10 +45,10 @@ export default function BookDetail() {
           Voltar para os livros
         </Link>
 
-        <div className="grid grid-cols-[auto_5fr_2fr] gap-6 mb-6 h-72">
-            <img src={book.imagemCapa} alt={`Capa do livro ${book.titulo}`} className="object-cover w-auto h-72 p-4 bg-white rounded-md" />
+        <div className="flex gap-6 mb-6 h-72">
+            <img src={book.imagemCapa} alt={`Capa do livro ${book.titulo}`} className="object-cover w-56 h-72 p-4 bg-white rounded-md" />
 
-            <div className="flex flex-col rounded-md p-4 bg-white items-center justify-center">
+            <div className="flex flex-col w-full rounded-md p-4 bg-white items-center justify-center">
                 <h1 className="text-2xl font-bold text-[#EE7354] mb-2">{book.titulo}</h1>
 
                 <div className="flex gap-2 mb-12">
@@ -57,7 +57,7 @@ export default function BookDetail() {
                   <p>por <span className="font-semibold text-black/80">{book.autor}</span> (Autor)</p>
                 </div>
 
-                <div className="flex items-center justify-center h-32 text-center px-4 border border-[#143B52] rounded-md">
+                <div className="flex items-center justify-center w-full h-32 text-center px-4 border border-[#143B52] rounded-md">
                   {[
                     { titulo: "Número de páginas", valor: `${book.numeroPaginas} páginas`, icon: BookOpenText },
                     { titulo: "Idioma", valor: `${book.idioma}`, icon: Globe },
@@ -83,7 +83,7 @@ export default function BookDetail() {
                 </div>
             </div>
 
-            <div className="flex flex-col justify-center items-center gap-4 p-6 rounded-md bg-white">
+            <div className="flex flex-col justify-center w-96 items-center gap-4 p-6 rounded-md bg-white">
                 <div className="flex flex-col w-full items-center justify-center border border-[#EE7354] rounded-md p-2">
                   <p className="text-black/80 font-semibold">{book.tipoCapa}</p>
                   <p className="text-black/80">
